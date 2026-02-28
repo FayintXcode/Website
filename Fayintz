@@ -1330,13 +1330,13 @@
     <!-- Loading Screen -->
     <div class="loader-screen" id="loader">
         <div class="loader-logo">
-            <h1>FayintX</h1>
+            <h1>VELTRIX</h1>
             <span>DOCS</span>
         </div>
         <div class="loader-bar-container">
             <div class="loader-bar" id="loaderBar"></div>
         </div>
-        <div class="loader-text">Initializing FayintX Hub...</div>
+        <div class="loader-text">Initializing Veltrix Hub...</div>
         <div class="loader-percent" id="loaderPercent">0%</div>
     </div>
 
@@ -1344,7 +1344,7 @@
     <header class="nav-header" id="navHeader">
         <div class="nav-logo">
             <div class="nav-logo-icon">V</div>
-            <span class="nav-logo-text">FayintX</span>
+            <span class="nav-logo-text">VELTRIX</span>
         </div>
         <nav class="nav-links">
             <a href="#showcase">Showcase</a>
@@ -1389,7 +1389,7 @@
     <main class="main-content" id="mainContent">
         <!-- Hero Section -->
         <section class="hero-section" id="hero">
-            <h1 class="hero-title">FayintD HUB</h1>
+            <h1 class="hero-title">VELTRIX HUB</h1>
             <p class="hero-tagline">Next-level Roblox scripting. Clean UI. Adaptive performance. Built for every executor.</p>
             <div class="hero-buttons">
                 <a href="#showcase" class="btn btn-primary">Open Script Showcase</a>
@@ -1410,9 +1410,7 @@
                     </div>
                 </div>
                 <div class="code-block">
-                    <code>script_key = "%KEY%"
-
-loadstring(game:HttpGet("https://api.getpolsec.com/scripts/hosted/a1a65af99009770a32e1a7056450f538938b62b39b50e8fb879bb956e9a0a16a.lua"))()</code>
+                    <code>loadstring(game:HttpGet("https://raw.githubusercontent.com/RaffleWS/Veltrix-Hub/refs/heads/main/VeltrixHub.luau"))()</code>
                 </div>
                 <button class="btn copy-btn" id="copyBtn" data-code="loadstring(game:HttpGet(&quot;https://raw.githubusercontent.com/RaffleWS/Veltrix-Hub/refs/heads/main/VeltrixHub.luau&quot;))()">
                     <svg viewBox="0 0 24 24">
