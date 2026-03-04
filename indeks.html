@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fayintz</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f0f0f;
+    color: white;
+    text-align: center;
+}
+
+/* ANIMASI FADE */
+.container {
+    padding: 40px 20px;
+    animation: fade 1s ease;
+}
+
+@keyframes fade {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* TITLE GLOW */
+h1 {
+    font-size: 40px;
+    color: #00f7ff;
+    text-shadow: 0 0 10px #00f7ff;
+}
+
+.tag {
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+.box {
+    background: #1a1a1a;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,255,255,0.3);
+    transition: 0.3s;
+}
+
+.box:hover {
+    transform: scale(1.03);
+}
+
+/* BUTTON */
+button {
+    background: #00f7ff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #00c2cc;
+}
+
+/* LOADING BAR */
+.bar {
+    width: 80%;
+    height: 10px;
+    background: #222;
+    margin: auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#loading {
+    width: 0%;
+    height: 10px;
+    background: #00f7ff;
+    box-shadow: 0 0 10px #00f7ff;
+    transition: 0.2s;
+}
+
+/* ASCII STYLE */
+#ascii {
+    margin-top: 10px;
+    font-family: monospace;
+    color: #00f7ff;
+}
+
+/* TYPING EFFECT */
+.typing {
+    border-right: 2px solid #00f7ff;
+    display: inline-block;
+    padding-right: 5px;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% {border-color: transparent;}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1><span id="title" class="typing"></span></h1>
+<p class="tag">Script Developer • UI Creator • Roblox Enthusiast</p>
+<p>🔥 Fast • Clean • Powerful</p>
+
+<div class="box">
+<h2>🚀 About Me</h2>
+<p>💻 Roblox Script Developer</p>
+<p>🎯 Blox Fruits / UI System</p>
+<p>⚡ Clean & Fast Script</p>
+<p>🧠 Always learning</p>
+</div>
+
+<div class="box">
+<h2>⚙️ Skills</h2>
+<p>Lua / Luau</p>
+<p>Roblox Studio</p>
+<p>UI Design</p>
+<p>Script Hub</p>
+</div>
+
+<div class="box">
+<h2>🔥 Projects</h2>
+<p>🚀 Blox Fruits Hub</p>
+<p>🌊 Tsunami Script Hub</p>
+<p>🎯 PvP Tools</p>
+<p>🧠 Auto Systems</p>
+</div>
+
+<div class="box">
+<h2>📊 Status</h2>
+
+<div class="bar">
+<div id="loading"></div>
+</div>
+
+<p id="percent">0%</p>
+<p id="ascii">[░░░░░░░░░░] 0%</p>
+
+</div>
+
+<div class="box">
+<h2>🌐 Connect</h2>
+<button onclick="wa()">WhatsApp</button>
+</div>
+
+</div>
+
+<script>
+// ======================
+// LOADING SYSTEM
+// ======================
+let load = 0;
+let bar = document.getElementById("loading");
+let text = document.getElementById("percent");
+let ascii = document.getElementById("ascii");
+
+function getAscii(p){
+    let total = 10;
+    let filled = Math.floor(p / 10);
+    let empty = total - filled;
+    return "[" + "█".repeat(filled) + "░".repeat(empty) + "] " + p + "%";
+}
+
+let interval = setInterval(() => {
+    load++;
+    bar.style.width = load + "%";
+    text.innerText = load + "%";
+    ascii.innerText = getAscii(load);
+
+    if(load >= 100){
+        clearInterval(interval);
+    }
+}, 30);
+
+// ======================
+// TYPING EFFECT
+// ======================
+let textTitle = "⚡ Fayintz";
+let i = 0;
+let speed = 100;
+
+function typeWriter() {
+    if (i < textTitle.length) {
+        document.getElementById("title").innerHTML += textTitle.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+    }
+}
+
+typeWriter();
+
+// ======================
+// WHATSAPP BUTTON
+// ======================
+function wa(){
+    window.open("https://wa.me/6281214168926");
+}
+</script>
+
+</body>
+</html>
